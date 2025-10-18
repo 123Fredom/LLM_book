@@ -143,9 +143,13 @@ Prompt 设计是一个 **迭代过程**：
 ### 5.1 PromptTemplate（单轮模板）
 
 ```python
+#PromptTemplate 提示词模板
 from langchain.prompts import PromptTemplate
 prompt = PromptTemplate.from_template("疾病: {disease}, 症状: {symptom}, 药物: {medicine}")
+#from_template把一串带花括号的普通字符串变成一个PromptTemplate对象，花括号里面是占位符
 print(prompt.format(disease="糖尿病", symptom="尿血", medicine="格列美脲"))
+#format把占位符替换成你给的汉字，返回最终字符串。
+#返回结果：疾病: 糖尿病, 症状: 尿血, 药物: 格列美脲
 ```
 
 ### 5.2 FewShotPromptTemplate（示例提示）
